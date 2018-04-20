@@ -17,7 +17,7 @@
     <preference name="android-minSdkVersion" value="14" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" /> <!--Activador Touch-->
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" /><!--Ejecutor Sistema-->
-    <plugin name="cordova-plugin-email-composer" version="0.8.3" source="npm" />
+    <!--<plugin name="cordova-plugin-email-composer" version="0.8.3" source="npm" />-->
 	
 	
 	
@@ -78,9 +78,8 @@
     </platform>
 
 	
-	<access origin="http://18.218.148.189:80/webservices/MailService.php" />
-	<allow-navigation href="data:*" />
-    <allow-intent href="http://*/*" />
+	<access origin="*" />
+	<allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 	<allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
