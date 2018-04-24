@@ -49,7 +49,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="perfil_admin.html"> Perfil Usuario</a></li>
-                    <li><a href="index.html"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
+                    <li><a id="close"><i class="fa fa-sign-out pull-right"></i> Cerrar</a></li>
                   </ul>
                 </li>
                </ul>
@@ -64,7 +64,7 @@
 		<div class="left_col scroll-view">
           
           <div class="navbar nav_title" style="border: 0;">
-   			<a href="index.html" class="site_title"><img src="img/logo.png" width="50" height="50"><span> Capremci<small> FCPC</small></span></a>
+   			<a id="close" class="site_title"><img src="img/logo.png" width="50" height="50"><span> Capremci<small> FCPC</small></span></a>
 		  </div>
 
  		 <div class="clearfix"></div>
@@ -137,8 +137,8 @@
 					</div>
 					<br>
 					
-					<div id="load_registrados" ></div>	
-					<div id="users_registrados"></div>	
+					<div id="load_registrados" style="margin-top: 40px;"></div>	
+					<div id="users_registrados" style="margin-top: 40px;"></div>	
 				
 					
                   
@@ -155,6 +155,16 @@
         
     </div>
     </div>
+   
+   
+   
+      <script type="text/javascript">
+$('#close').click(function(){
+navigator.app.exitApp();
+localStorage.clear();
+})
+</script> 
+   
    
    <!-- Bootstrap -->
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>

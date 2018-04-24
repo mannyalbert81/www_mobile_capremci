@@ -1,7 +1,7 @@
 $(document).on("ready",onDeviceReady);
 
 document.addEventListener("deviceready", onDeviceReady, false);
-var db = window.openDatabase("capremci.db", "1.0", "MY DB", 10000); //crea o abre la base
+//var db = window.openDatabase("capremci.db", "1.0", "MY DB", 10000); //crea o abre la base
 
 
 function onDeviceReady() 
@@ -30,6 +30,7 @@ function checkConnection() {
    
      if (online=='1'){
     	   
+    	 
     	    var cedula = $("#cedula").val();
     		var clave = $("#clave").val();
     		var id_usuarios = "";
@@ -41,6 +42,7 @@ function checkConnection() {
     		var base_url = 'http://18.218.148.189:80/webservices/';
     		var pag_service = 'LoginService.php' ;
     	 
+    		
     		
     		$.ajax({
     			   type: 'POST',
@@ -136,7 +138,6 @@ function iniciar_banner() {
     	  
     		var base_url = 'http://18.218.148.189:80/webservices/';
     		var pag_service = 'LoginService.php' ;
-    		var queryIns = 'INSERT INTO banner(nombre_banner) VALUES (?)';
     		
     		
     		$.ajax({
@@ -148,14 +149,7 @@ function iniciar_banner() {
     				 		
     				   $("#banner").html(x);
     				  
-    				    db.transaction(function (tx) {
-    						tx.executeSql("DELETE FROM banner;");
-    						});
-    					
-    					 
-    						    db.transaction(function (tx) {
-    							 tx.executeSql(queryIns,[x],function (tx, res) {},function (e) {alert("ERROR: " + e.message);});
-    						   });
+    				   
     					
     				   } ,
     				error: function (jqXHR, textStatus, errorThrown) {
@@ -223,21 +217,7 @@ function iniciar_banner() {
     	 
      }else{
     	 
-    	       db.transaction(function(transaction) {
-    			transaction.executeSql('SELECT * FROM banner WHERE 1=1', [], function (tx, results) {
-    			var banner = "";
-    			var i=0;
-    			var len3 = results.rows.length, i;
-    			
-    			for (i=0; i<=len3-1; i++) {
-    				banner = results.rows.item(i).nombre_banner;
-    			}
-    			
-    			$("#banner").html(banner);
-    				 
-    			}, null);
-    			});
-    	       
+    	      
     	       
     	       
     	       
