@@ -39,7 +39,7 @@ function checkConnection() {
     		var correo_usuarios = "";
     		var id_estado = "";
     		
-    		var base_url = 'http://186.4.157.125:80/webcapremci/webservices/';
+    		var base_url = 'http://186.4.157.125/webcapremci/webservices/';
     		var pag_service = 'LoginService.php';
     	 
     		
@@ -136,7 +136,7 @@ function iniciar_banner() {
    
      if (online=='1'){
     	  
-    		var base_url = 'http://186.4.157.125:80/webcapremci/webservices/';
+    		var base_url = 'http://186.4.157.125/webcapremci/webservices/';
     		var pag_service = 'LoginService.php' ;
     		
     		
